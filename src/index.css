@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: "font1";
+  src: url("/src/assets/fonts/font1.woff2") format("woff2");
+}
+@font-face {
+  font-family: "font2";
+  src: url("/src/assets/fonts/font2.woff2") format("woff2");
+}
+@font-face {
+  font-family: "font3";
+  src: url("/src/assets/fonts/font3.woff2") format("woff2");
+}
+@font-face {
+  font-family: "font4";
+  src: url("/src/assets/fonts/font4.woff2") format("woff2");
+}
+
+body{
+  overflow-x : "hidden";
+}
+
+/* perspective */
+.perspective {
+  perspective: 1200px;
+}
+
+/* floating phone */
+.phone-wrapper {
+  transform: rotateX(15deg) rotateY(-20deg) rotateZ(5deg);
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  width: full;
+  height: full;
+}
+
+/* hover tilt */
+.phone-wrapper:hover {
+  transform: rotateX(10deg) rotateY(-10deg) scale(1.03);
+}
+
+/* floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotateX(15deg) rotateY(-20deg) rotateZ(5deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateX(15deg) rotateY(-20deg) rotateZ(5deg);
+  }
+}
+
+/* avatar */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scrollText 100s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
